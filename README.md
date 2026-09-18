@@ -1,6 +1,6 @@
 # Zyb Search API
 
-独立的作业帮 14.53.0 单题图片搜索 API。握手、签名、动态密钥和响应解密均使用纯 Python 实现，运行时不需要 APK、`.so`、Java、Android 模拟器或第三方 Python 包。
+独立的作业帮 14.53.0 单题图片搜索 API。握手、签名、动态密钥和响应解密均使用纯 Python 实现。
 
 ## 本地启动
 
@@ -11,12 +11,6 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -e .
 zyb-search-api --host 127.0.0.1 --port 8080
-```
-
-也可以不安装直接运行：
-
-```bash
-PYTHONPATH=src python3 -m zyb_search_api --host 127.0.0.1 --port 8080
 ```
 
 服务提供三个接口：
