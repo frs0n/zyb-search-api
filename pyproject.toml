@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zyb-search-api"
+version = "1.0.0"
+description = "Pure-Python HTTP API for the Zyb 14.53.0 image-search protocol"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+zyb-search-api = "zyb_search_api.api:main"
+zyb-search = "zyb_search_api.client:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

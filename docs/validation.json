@@ -1,0 +1,50 @@
+{
+  "validatedAt": "2026-09-18T12:07:28Z",
+  "apk": {
+    "package": "com.baidu.homework",
+    "versionName": "14.53.0",
+    "versionCode": 2810,
+    "sha256": "a22a5bab20855278c1ab92f0ea5c8d775c3b59b9790ce32dca8f4e9ed87f32a2"
+  },
+  "testImage": {
+    "file": "samples/test-question.jpg",
+    "contentDescription": "1 + 1 = ?",
+    "sha256": "ca548492b49ca549c267194414238d59ffe4d747841ba5d6c5eef5f59bb35521"
+  },
+  "checks": [
+    {
+      "name": "missing_timestamp_probe",
+      "endpoint": "https://aisearch.zuoyebang.com/search/submit/single",
+      "httpStatus": 200,
+      "errNo": 5110,
+      "errstr": "lack time param: _t_"
+    },
+    {
+      "name": "missing_signature_probe",
+      "endpoint": "https://aisearch.zuoyebang.com/search/submit/single",
+      "httpStatus": 200,
+      "errNo": 5103,
+      "errstr": "user params lack sign key words"
+    },
+    {
+      "name": "antispam_handshake",
+      "endpoint": "https://pluto.zuoyebang.com/pluto/app/antispam",
+      "httpStatus": 200,
+      "errNo": 0,
+      "errstr": "success"
+    },
+    {
+      "name": "signed_single_search",
+      "endpoint": "https://aisearch.zuoyebang.com/search/submit/single",
+      "httpStatus": 200,
+      "errNo": 0,
+      "errstr": "success",
+      "subject": "数学",
+      "matchCount": 5,
+      "decryption": "success",
+      "firstAnswerEvidence": "1+1=2"
+    }
+  ],
+  "credentialsUsed": false,
+  "redaction": "Session IDs, negotiated keys, request signatures and server blobs omitted."
+}
